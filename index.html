@@ -22,19 +22,19 @@
         <div class="hero-inner">
           <h1 class="paper-title">Rosetum3D: A Large-Scale 3D Vision Dataset from Preharvest Roses</h1>
 
-          <div class="author-list">
+          <!-- <div class="author-list">
             <span>Songyan Liu,</span>
             <span>Xipei Liu,</span>
             <span>Yujie Liu,</span>
             <span>Jiali Wu,</span>
             <span>Xiaofei Liu</span>
-          </div>
+          </div> -->
 
           <p class="affiliation-line">
             <span>Yunnan University</span>
           </p>
 
-          <p class="venue-line">ECCV 2026 Submission</p>
+          <!-- <p class="venue-line">ECCV 2026 Submission</p> -->
 
           <div class="link-row">
             <a class="link-button" href="./downloads/paper.pdf" download="paper.pdf">
@@ -46,9 +46,9 @@
             <a class="link-button" href="https://huggingface.co/datasets/WaterMelon2333/Rosetum3D" target="_blank" rel="noreferrer">
               Hugging Face
             </a>
-            <a class="link-button" href="#citation">
+            <!-- <a class="link-button" href="#citation">
               BibTeX
-            </a>
+            </a> -->
           </div>
         </div>
       </section>
@@ -132,57 +132,6 @@
               <span class="stat-label">Validation Error</span>
               <strong class="stat-value">0.14 cm</strong>
               <p>Mean absolute error across 137 tape-measure validations.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-block reveal" id="collection">
-        <div class="content-wrap narrow">
-          <h2 class="section-title">Collection and Annotation</h2>
-          <div class="info-grid">
-            <article class="info-card">
-              <h3 class="dataset-card-title">Capture Setup</h3>
-              <ul class="info-list">
-                <li>Orbbec Gemini 335L or 336L stereo RGB-D cameras.</li>
-                <li>30 Hz synchronized depth and color acquisition.</li>
-                <li>1280 × 800 resolution for both depth and RGB frames.</li>
-                <li>Chest-mounted sensing with an Android device.</li>
-                <li>Checkerboard-based RGB-D calibration.</li>
-              </ul>
-            </article>
-
-            <article class="info-card">
-              <h3 class="dataset-card-title">Greenhouse Protocol</h3>
-              <ul class="info-list">
-                <li>Operators move parallel to plant rows at 0.3-0.5 m/s.</li>
-                <li>Acquisition distance is maintained at 0.8-1.2 m.</li>
-                <li>Data is collected in operational commercial greenhouses.</li>
-                <li>Sequences span diverse rose varieties and growth stages.</li>
-                <li>The setup is designed for severe occlusion patterns.</li>
-              </ul>
-            </article>
-
-            <article class="info-card">
-              <h3 class="dataset-card-title">Primary Keypoints</h3>
-              <ul class="info-list">
-                <li>Corolla Center</li>
-                <li>Sepal-Pedicel Junction</li>
-                <li>Stem-Pedicel Transition</li>
-                <li>Median Point</li>
-                <li>Soil-Emergence Point</li>
-              </ul>
-            </article>
-
-            <article class="info-card">
-              <h3 class="dataset-card-title">Annotation Details</h3>
-              <ul class="info-list">
-                <li>Bounding boxes and keypoints are labeled in 2D first.</li>
-                <li>Four auxiliary inter-points improve interpolation.</li>
-                <li>Occluded points are flagged with an invisible attribute.</li>
-                <li>Objects smaller than 32 × 32 pixels are excluded.</li>
-                <li>All 2D keypoints are backprojected into 3D coordinates.</li>
-              </ul>
             </article>
           </div>
         </div>
