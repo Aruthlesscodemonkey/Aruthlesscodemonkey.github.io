@@ -102,17 +102,6 @@
 
       <section class="section-block reveal" id="datasets">
         <div class="content-wrap narrow">
-          <h2 class="section-title">Rosetum3D Dataset</h2>
-          <div class="dataset-intro body-copy">
-            <p>
-              Rosetum3D is presented in the paper as a large-scale RGB-D dataset
-              for preharvest rose analysis. It is built for occlusion-heavy
-              floriculture scenes where direct 3D annotation is difficult, and
-              it turns synchronized multi-view RGB-D capture into a benchmark
-              for localization and broader agricultural perception.
-            </p>
-          </div>
-
           <div class="dataset-stats">
             <article class="stat-card">
               <span class="stat-label">Scenes</span>
@@ -143,48 +132,6 @@
               <span class="stat-label">Validation Error</span>
               <strong class="stat-value">0.14 cm</strong>
               <p>Mean absolute error across 137 tape-measure validations.</p>
-            </article>
-          </div>
-
-          <div class="dataset-grid">
-            <article class="dataset-card">
-              <h3 class="dataset-card-title">Overview</h3>
-              <p>
-                Rosetum3D is designed around dense preharvest rose cultivation
-                rather than generic indoor or autonomous-driving scenes. The
-                emphasis is on plant architecture, occlusion robustness, and
-                instance-level geometric understanding before harvesting.
-              </p>
-            </article>
-
-            <article class="dataset-card">
-              <h3 class="dataset-card-title">Sensors and Capture</h3>
-              <p>
-                The dataset uses Orbbec Gemini 335L or 336L RGB-D cameras with
-                synchronized depth and color capture at 30 Hz and 1280 × 800
-                resolution, collected under real greenhouse operating
-                conditions.
-              </p>
-            </article>
-
-            <article class="dataset-card">
-              <h3 class="dataset-card-title">Annotation Strategy</h3>
-              <p>
-                Each rose is first labeled in 2D with bounding boxes and
-                botanically defined keypoints, then reconstructed in 3D via
-                synchronized depth backprojection. This hybrid pipeline avoids
-                fragile direct 3D labeling in occluded scenes.
-              </p>
-            </article>
-
-            <article class="dataset-card">
-              <h3 class="dataset-card-title">Task Coverage</h3>
-              <p>
-                The benchmark covers 2D object detection, 2D keypoint
-                localization, monocular depth estimation, local feature
-                matching, instance re-identification, and 3D rose keypoint
-                localization.
-              </p>
             </article>
           </div>
         </div>
