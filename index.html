@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosetum3D</title>
+    <meta
+      name="description"
+      content="Rosetum3D is a large-scale RGB-D dataset for preharvest rose analysis, supporting 2D/3D localization, depth estimation, feature matching, and instance re-identification."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Castoro:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero section-block">
+        <div class="hero-inner">
+          <h1 class="paper-title">Rosetum3D: A Large-Scale 3D Vision Dataset from Preharvest Roses</h1>
+
+          <div class="author-list">
+            <span>Songyan Liu,</span>
+            <span>Xipei Liu,</span>
+            <span>Yujie Liu,</span>
+            <span>Jiali Wu,</span>
+            <span>Xiaofei Liu</span>
+          </div>
+
+          <p class="affiliation-line">
+            <span>Yunnan University</span>
+          </p>
+
+          <p class="venue-line">ECCV 2026 Submission</p>
+
+          <div class="link-row">
+            <a class="link-button" href="./downloads/paper.pdf" download="paper.pdf">
+              Paper
+            </a>
+            <a class="link-button" href="#benchmarks">
+              Benchmarks
+            </a>
+            <a class="link-button" href="./downloads/Rosetum3D.zip" download="Rosetum3D.zip">
+              Download
+            </a>
+            <a class="link-button" href="#citation">
+              BibTeX
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="media-section">
+        <div class="content-wrap">
+          <div class="media-frame reveal">
+            <img
+              class="teaser-image"
+              src="./assets/motivation1.png"
+              alt="Teaser figure"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="abstract">
+        <div class="content-wrap narrow">
+          <h2 class="section-title">Abstract</h2>
+          <div class="body-copy">
+            <p>
+              The global rose cultivation industry has experienced continued
+              expansion in recent years. There has been a set of value
+              evaluation criteria covering multiple dimensions for roses.
+              However, the evaluations are mainly conducted by human experts
+              after harvesting, which is time-consuming and labor-intensive. 3D
+              computer vision technologies are promising to automate the process
+              before harvesting, but the lack of large-scale datasets with
+              localization annotations that capture plant architecture hinders
+              the progress. To bridge this gap, we propose
+              <strong>Rosetum3D</strong>, which is a large-scale 3D vision
+              dataset for preharvest roses. The dataset is constructed via
+              occlusion-robust multi-view RGB-D capture protocols in commercial
+              greenhouses. We provide fine-grained 2D localization labels using
+              bounding boxes and botanically defined keypoints, and then obtain
+              the 3D structures recovered through depth backprojection.
+              Rosetum3D contains 21,114 images and 46,848 annotated rose
+              objects. Models trained on Rosetum3D have achieved 2D/3D rose
+              localization, which is a crucial step for automated preharvest
+              quality grading and growth monitoring. Beyond localization,
+              Rosetum3D serves as a benchmark for agricultural vision tasks,
+              including 2D rose object detection, local feature matching, depth
+              estimation, and instance re-identification. By enabling
+              data-driven precision agriculture, Rosetum3D paves the way for
+              robotic harvesting systems and AI-driven yield prediction in
+              protected cultivation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="datasets">
+        <div class="content-wrap narrow">
+          <h2 class="section-title">Rosetum3D Dataset</h2>
+          <div class="dataset-intro body-copy">
+            <p>
+              Rosetum3D is presented in the paper as a large-scale RGB-D dataset
+              for preharvest rose analysis. It is built for occlusion-heavy
+              floriculture scenes where direct 3D annotation is difficult, and
+              it turns synchronized multi-view RGB-D capture into a benchmark
+              for localization and broader agricultural perception.
+            </p>
+          </div>
+
+          <div class="dataset-stats">
+            <article class="stat-card">
+              <span class="stat-label">Scenes</span>
+              <strong class="stat-value">20</strong>
+              <p>Diverse rose scenes collected in operational greenhouses.</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Images</span>
+              <strong class="stat-value">21,114</strong>
+              <p>RGB frames with synchronized depth observations.</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Objects</span>
+              <strong class="stat-value">46,848</strong>
+              <p>Rose instances annotated for localization.</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Keypoints</span>
+              <strong class="stat-value">421,632</strong>
+              <p>2D/3D keypoint annotations across all rose objects.</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Train / Test</span>
+              <strong class="stat-value">17 / 3 Scenes</strong>
+              <p>40,759 training objects and 6,089 testing objects.</p>
+            </article>
+            <article class="stat-card">
+              <span class="stat-label">Validation Error</span>
+              <strong class="stat-value">0.14 cm</strong>
+              <p>Mean absolute error across 137 tape-measure validations.</p>
+            </article>
+          </div>
+
+          <div class="dataset-grid">
+            <article class="dataset-card">
+              <h3 class="dataset-card-title">Overview</h3>
+              <p>
+                Rosetum3D is designed around dense preharvest rose cultivation
+                rather than generic indoor or autonomous-driving scenes. The
+                emphasis is on plant architecture, occlusion robustness, and
+                instance-level geometric understanding before harvesting.
+              </p>
+            </article>
+
+            <article class="dataset-card">
+              <h3 class="dataset-card-title">Sensors and Capture</h3>
+              <p>
+                The dataset uses Orbbec Gemini 335L or 336L RGB-D cameras with
+                synchronized depth and color capture at 30 Hz and 1280 × 800
+                resolution, collected under real greenhouse operating
+                conditions.
+              </p>
+            </article>
+
+            <article class="dataset-card">
+              <h3 class="dataset-card-title">Annotation Strategy</h3>
+              <p>
+                Each rose is first labeled in 2D with bounding boxes and
+                botanically defined keypoints, then reconstructed in 3D via
+                synchronized depth backprojection. This hybrid pipeline avoids
+                fragile direct 3D labeling in occluded scenes.
+              </p>
+            </article>
+
+            <article class="dataset-card">
+              <h3 class="dataset-card-title">Task Coverage</h3>
+              <p>
+                The benchmark covers 2D object detection, 2D keypoint
+                localization, monocular depth estimation, local feature
+                matching, instance re-identification, and 3D rose keypoint
+                localization.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="collection">
+        <div class="content-wrap narrow">
+          <h2 class="section-title">Collection and Annotation</h2>
+          <div class="info-grid">
+            <article class="info-card">
+              <h3 class="dataset-card-title">Capture Setup</h3>
+              <ul class="info-list">
+                <li>Orbbec Gemini 335L or 336L stereo RGB-D cameras.</li>
+                <li>30 Hz synchronized depth and color acquisition.</li>
+                <li>1280 × 800 resolution for both depth and RGB frames.</li>
+                <li>Chest-mounted sensing with an Android device.</li>
+                <li>Checkerboard-based RGB-D calibration.</li>
+              </ul>
+            </article>
+
+            <article class="info-card">
+              <h3 class="dataset-card-title">Greenhouse Protocol</h3>
+              <ul class="info-list">
+                <li>Operators move parallel to plant rows at 0.3-0.5 m/s.</li>
+                <li>Acquisition distance is maintained at 0.8-1.2 m.</li>
+                <li>Data is collected in operational commercial greenhouses.</li>
+                <li>Sequences span diverse rose varieties and growth stages.</li>
+                <li>The setup is designed for severe occlusion patterns.</li>
+              </ul>
+            </article>
+
+            <article class="info-card">
+              <h3 class="dataset-card-title">Primary Keypoints</h3>
+              <ul class="info-list">
+                <li>Corolla Center</li>
+                <li>Sepal-Pedicel Junction</li>
+                <li>Stem-Pedicel Transition</li>
+                <li>Median Point</li>
+                <li>Soil-Emergence Point</li>
+              </ul>
+            </article>
+
+            <article class="info-card">
+              <h3 class="dataset-card-title">Annotation Details</h3>
+              <ul class="info-list">
+                <li>Bounding boxes and keypoints are labeled in 2D first.</li>
+                <li>Four auxiliary inter-points improve interpolation.</li>
+                <li>Occluded points are flagged with an invisible attribute.</li>
+                <li>Objects smaller than 32 × 32 pixels are excluded.</li>
+                <li>All 2D keypoints are backprojected into 3D coordinates.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="benchmarks">
+        <div class="content-wrap narrow">
+          <h2 class="section-title">Benchmarks</h2>
+          <div class="body-copy">
+            <p>
+              The paper evaluates Rosetum3D as a multi-task benchmark for
+              agricultural vision. Beyond rose localization, it reports results
+              on object detection, keypoint localization, monocular depth
+              estimation, local feature matching, instance re-identification,
+              and 3D rose keypoint localization.
+            </p>
+          </div>
+
+          <div class="benchmark-grid">
+            <article class="benchmark-card">
+              <h3 class="dataset-card-title">2D Object Detection</h3>
+              <p class="benchmark-metric">Best AP: <strong>35.0</strong></p>
+              <p>YOLOv5 reports the strongest rose detection baseline in the paper.</p>
+            </article>
+
+            <article class="benchmark-card">
+              <h3 class="dataset-card-title">2D Keypoint Localization</h3>
+              <p class="benchmark-metric">Best AP with GT boxes: <strong>42.1</strong></p>
+              <p>ViTPose reaches the highest reported AP when ground-truth boxes are provided.</p>
+            </article>
+
+            <article class="benchmark-card">
+              <h3 class="dataset-card-title">Depth Estimation</h3>
+              <p class="benchmark-metric">Best AbsRel: <strong>0.165</strong></p>
+              <p>Depth benchmarking uses 33,019 aligned RGB-D image pairs, with BinsFormer as the best fine-tuned result.</p>
+            </article>
+
+            <article class="benchmark-card">
+              <h3 class="dataset-card-title">Feature Matching</h3>
+              <p class="benchmark-metric">Best AUC@5°: <strong>72.3</strong></p>
+              <p>RoMa performs best on Rosetum3D-1800, a benchmark of 1,800 image pairs.</p>
+            </article>
+
+            <article class="benchmark-card">
+              <h3 class="dataset-card-title">Instance Re-ID</h3>
+              <p class="benchmark-metric">Best mAP / Rank-1: <strong>80.7 / 96.0</strong></p>
+              <p>The instance re-identification benchmark covers 1,923 individuals across 36,712 images.</p>
+            </article>
+
+            <article class="benchmark-card">
+              <h3 class="dataset-card-title">3D Rose Localization</h3>
+              <p class="benchmark-metric">MPJPE: <strong>556.8 → 539.1</strong></p>
+              <p>The paper's multi-frame strategy improves over the single-frame top-down baseline.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="citation">
+        <div class="content-wrap narrow">
+          <h2 class="section-title">BibTeX</h2>
+          <div class="citation-box">
+            <button class="copy-button" type="button" data-copy-target="bibtex">
+              Copy
+            </button>
+            <pre id="bibtex"><code>@misc{rosetum3d2026,
+  title={Rosetum3D: A Large-Scale 3D Vision Dataset from Preharvest Roses},
+  author={Anonymous},
+  year={2026},
+  note={ECCV 2026 submission}
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block reveal" id="acknowledgements">
+        <div class="content-wrap narrow">
+          <h2 class="section-title">Acknowledgements</h2>
+          <div class="body-copy">
+            <p>
+              Acknowledgement content will be added here.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
